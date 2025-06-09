@@ -27,7 +27,7 @@ Gem Incremental is a lightweight, browser-based incremental clicker game where y
 
 This project is licensed under the MIT License.
 
-##✅ You are free to:
+## ✅ You are free to:
 
     Use, modify, and distribute the code.
 
