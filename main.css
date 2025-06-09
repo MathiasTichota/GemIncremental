@@ -1,0 +1,215 @@
+/*
+Gem Incremental - v1.0.0
+Author: Mathias Tichota
+Licensed under the MIT License 
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #a0f0fb;
+}
+
+#game-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+}
+
+.container {
+  display: flex;
+  height: calc(100% - 100px);
+  padding: 10px;
+  gap: 10px;
+}
+
+.section {
+  flex: 1;
+  border: 2px solid black;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow:
+    0 4px 6px rgba(0, 143, 160, 0.4),
+    0 6px 10px rgba(160, 240, 251, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#middle-section {
+  overflow-y: auto;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.coming-soon-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coming-soon-box {
+  background-color: #ccc;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: none;
+  color: #555;
+  font-weight: bold;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px #888, 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Upgrade box styles */
+.upgrade-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00cfe8;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 4px #008fa0, 0 6px 10px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  font-weight: bold;
+  height: 100px;
+}
+
+.upgrade-icon {
+  font-size: 3rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.upgrade-info {
+  flex-grow: 1;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.upgrade-power {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #d0f7ff;
+  margin-top: 4px;
+  display: block;
+}
+
+#buy-upgrade,
+#buy-miner {
+  font-size: 1.5rem;
+  padding: 10px 25px;
+  cursor: pointer;
+  color: white;
+  background-color: #00cfe8;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px #008fa0, 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease-in-out;
+}
+
+#buy-upgrade:active,
+#buy-miner:active {
+  box-shadow: 0 2px #008fa0, 0 3px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+.gem-icon {
+  font-size: 10rem;
+  margin-bottom: 20px;
+}
+
+.mine-button {
+  font-size: 2rem;
+  padding: 20px 40px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #00cfe8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px #008fa0, 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease-in-out;
+}
+
+.mine-button:active {
+  box-shadow: 0 2px #008fa0, 0 3px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+.gem-display {
+  font-size: 2rem;
+}
+
+#click-power-display,
+#help-power-display {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px;
+  position: fixed;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9rem;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.changelog-entry {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#right-section {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+/* Optional: add smoother styling for scrollbars (Chrome/Edge) */
+#right-section::-webkit-scrollbar {
+  width: 10px;
+}
+#right-section::-webkit-scrollbar-thumb {
+  background-color: #00cfe8;
+  border-radius: 5px;
+}
+#right-section::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}

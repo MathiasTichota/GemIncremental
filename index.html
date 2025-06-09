@@ -1,0 +1,84 @@
+<!-- 
+Gem Incremental v1.0.0
+Author: Mathias Tichota
+Licensed under the MIT License
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gem Incremental v1.0.0</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <h1 id="game-title">Gem Incremental v1.0.0</h1>
+
+  <div class="container">
+    <div class="section" id="mine-section">
+      <div class="gem-display"><span id="gem-count">0</span> 💎</div>
+      <div class="gem-icon">💎</div>
+      <div id="click-power-display">Click Power: 1</div>
+      <div id="help-power-display">Help Power: 0</div>
+      <button class="mine-button" onclick="mineGem()">Mine Gems</button>
+    </div>
+
+    <div class="section" id="middle-section">
+      <div class="coming-soon-container">
+        <div class="upgrade-box">
+          <div class="tooltip-container">
+            <div class="upgrade-icon">⛏️</div>
+            <span class="tooltip-text">Why not purchase a better pickaxe for yourself?</span>
+          </div>
+          <div class="upgrade-info">
+            <strong>Better Pickaxe</strong><br>
+            Cost: <span id="upgrade-cost">10</span> 💎<br>
+            <small class="upgrade-power">+1 Clicking Power</small>
+          </div>
+          <button id="buy-upgrade" class="mine-button" onclick="buyUpgrade()">Buy</button>
+        </div>
+
+        <div class="upgrade-box">
+          <div class="tooltip-container">
+            <div class="upgrade-icon">👷</div>
+            <span class="tooltip-text">Why not hire a helper that will mine for you?</span>
+          </div>
+          <div class="upgrade-info">
+            <strong>Miner</strong><br>
+            Cost: <span id="miner-cost">100</span> 💎<br>
+            <small class="upgrade-power">+10 Help Power</small>
+          </div>
+          <button id="buy-miner" class="mine-button" onclick="buyMiner()">Buy</button>
+        </div>
+
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+        <div class="coming-soon-box">Coming soon</div>
+      </div>
+    </div>
+
+    <div class="section" id="right-section">
+  <h2 style="text-align: center;">Changelog</h2>
+
+  <div class="changelog-entry">
+    <h3 style="text-align: left;">v1.0.0</h3>
+    <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+    <ul style="list-style-type: disc; margin-left: 20px;">
+      <li>Initial release of the Gem Incremental game.</li>
+      <li>Added Better Pickaxe upgrade that gives you more click power.</li>
+      <li>Added Miner upgrade that generates gems automatically.</li>
+      <li>Game state now saves via cookies.</li>
+      <li>Basic layout with three sections and smooth UI.</li>
+    </ul>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
