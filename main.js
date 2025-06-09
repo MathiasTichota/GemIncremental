@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.1.2
+Gem Incremental v1.1.3
 Author: Mathias Tichota
 Licensed under the MIT License
 */
@@ -8,7 +8,7 @@ let clickPower = 1;
 let helpPower = 0;
 let pickaxeUpgrade = 10;
 let minerCost = 100;
-let bombCost = 500;
+let bombCost = 1000;
 
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
