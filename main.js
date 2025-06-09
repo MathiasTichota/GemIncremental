@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.1.1
+Gem Incremental v1.1.2
 Author: Mathias Tichota
 Licensed under the MIT License
 */
@@ -45,7 +45,7 @@ function buyUpgrade() {
   if (gems >= pickaxeUpgrade) {
     gems -= pickaxeUpgrade;
     clickPower += 1;
-    pickaxeUpgrade = Math.floor(pickaxeUpgrade * 1.35);
+    pickaxeUpgrade = Math.floor(pickaxeUpgrade * 1.15); // Less exponential
     updateDisplay();
   }
 }
@@ -54,7 +54,7 @@ function buyMiner() {
   if (gems >= minerCost) {
     gems -= minerCost;
     helpPower += 10;
-    minerCost = Math.floor(minerCost * 1.45);
+    minerCost = Math.floor(minerCost * 1.20); // Less exponential
     updateDisplay();
   }
 }
@@ -63,7 +63,7 @@ function buyBomb() {
   if (gems >= bombCost) {
     gems -= bombCost;
     helpPower += 100;
-    bombCost = Math.floor(minerCost * 1.55);
+    bombCost = Math.floor(bombCost * 1.25); // Less exponential
     updateDisplay();
   }
 }
