@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.1.0
+Gem Incremental v1.1.1
 Author: Mathias Tichota
 Licensed under the MIT License
 */
