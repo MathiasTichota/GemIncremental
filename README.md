@@ -22,3 +22,22 @@ Gem Incremental is a lightweight, browser-based incremental clicker game where y
    - **Better Pickaxe** – increases click power.
    - **Miner** – automates gem generation.
 3. Plan your strategy: upgrades increase in cost over time.
+
+## 🪪 License & Usage
+
+This project is licensed under the MIT License.
+
+##✅ You are free to:
+
+    Use, modify, and distribute the code.
+
+    Create mods or forks of the project.
+
+    Sell your modified versions if you like.
+
+## 🚫 As long as you:
+
+    Credit the original author: Mathias Tichota
+
+    Link back to this repository:
+    https://github.com/MathiasTichota/GemIncremental
