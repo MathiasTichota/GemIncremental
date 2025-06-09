@@ -1,6 +1,6 @@
 # 💎 Gem Incremental
 
-**Version:** v1.1.0  
+**Version:** v1.1.1  
 **Release Date:** June 9th 2025  
 **License:** MIT
 
