@@ -8,6 +8,7 @@ let clickPower = 1;
 let helpPower = 0;
 let pickaxeUpgrade = 10;
 let minerCost = 100;
+let bombCost = 500;
 
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -25,12 +26,14 @@ function updateDisplay() {
   document.getElementById('help-power-display').textContent = `Help Power: ${helpPower}`;
   document.getElementById('upgrade-cost').textContent = pickaxeUpgrade;
   document.getElementById('miner-cost').textContent = minerCost;
+  document.getElementById('bomb-cost').textContent = bombCost;
 
   setCookie('gems', gems);
   setCookie('clickPower', clickPower);
   setCookie('helpPower', helpPower);
   setCookie('pickaxeUpgrade', pickaxeUpgrade);
   setCookie('minerCost', minerCost);
+  setCookie('bombCost', bombCost);
 }
 
 function mineGem() {
@@ -56,18 +59,29 @@ function buyMiner() {
   }
 }
 
+function buyBomb() {
+  if (gems >= bombCost) {
+    gems -= bombCost;
+    helpPower += 100;
+    bombCost = Math.floor(minerCost * 1.55);
+    updateDisplay();
+  }
+}
+
 function loadSavedData() {
   const savedGems = getCookie('gems');
   const savedClick = getCookie('clickPower');
   const savedHelp = getCookie('helpPower');
   const savedPickaxe = getCookie('pickaxeUpgrade');
   const savedMiner = getCookie('minerCost');
+  const savedBomb = getCookie('bombCost');
 
   if (savedGems) gems = parseInt(savedGems);
   if (savedClick) clickPower = parseInt(savedClick);
   if (savedHelp) helpPower = parseInt(savedHelp);
   if (savedPickaxe) pickaxeUpgrade = parseInt(savedPickaxe);
   if (savedMiner) minerCost = parseInt(savedMiner);
+  if (savedBomb) bombCost = parseInt(savedBomb);
 }
 
 setInterval(() => {
