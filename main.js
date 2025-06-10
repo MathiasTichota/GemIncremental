@@ -72,8 +72,8 @@ function buyBomb() {
 }
 
 function buyDynamite() {
-  if (gems >= bombCost) {
-    gems -= bombCost;
+  if (gems >= dynamiteCost) {
+    gems -= dynamiteCost;
     helpPower += 1000;
     dynamiteCost = Math.floor(bombCost * 1.30);
     updateDisplay();
