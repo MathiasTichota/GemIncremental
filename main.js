@@ -74,7 +74,7 @@ function buyBomb() {
 function buyBomb() {
   if (gems >= bombCost) {
     gems -= bombCost;
-    helpPower += 100;
+    helpPower += 1000;
     bombCost = Math.floor(bombCost * 1.30);
     updateDisplay();
   }
