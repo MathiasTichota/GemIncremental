@@ -71,7 +71,7 @@ function buyBomb() {
   }
 }
 
-function buyBomb() {
+function buyDynamite() {
   if (gems >= bombCost) {
     gems -= bombCost;
     helpPower += 1000;
