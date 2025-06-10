@@ -110,7 +110,8 @@ html, body {
 
 #buy-upgrade,
 #buy-miner,
-#buy-bomb {
+#buy-bomb,
+#buy-dynamite {
   font-size: 1.5rem;
   padding: 10px 25px;
   cursor: pointer;
@@ -124,7 +125,9 @@ html, body {
 
 #buy-upgrade:active,
 #buy-miner:active,
-#buy-bomb:active {
+#buy-bomb:active,
+#buy-dynamite:active
+{
   box-shadow: 0 2px #008fa0, 0 3px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
 }
