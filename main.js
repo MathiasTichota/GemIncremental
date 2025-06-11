@@ -1,19 +1,17 @@
 /*
-Gem Incremental v1.5.0
+Gem Incremental v1.4.1
 Author: Mathias Tichota
 Licensed under the MIT License
 */
 let gems = 0;
 let clickPower = 1;
 let helpPower = 0;
-let rebirthPower = 0;
 let pickaxeUpgrade = 10;
 let minerCost = 100;
 let bombCost = 1000;
 let dynamiteCost = 10000;
 let robotCost = 100000;
 let rocketCost = 1000000;
-let rebirthCost = 10000000;
 
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -29,26 +27,22 @@ function updateDisplay() {
   document.getElementById('gem-count').textContent = gems;
   document.getElementById('click-power-display').textContent = `Click Power: ${clickPower}`;
   document.getElementById('help-power-display').textContent = `Help Power: ${helpPower}`;
-  document.getElementById('rebirth-power-display').textContent = `Rebirth Power: ${rebirthPower}`;
   document.getElementById('upgrade-cost').textContent = pickaxeUpgrade;
   document.getElementById('miner-cost').textContent = minerCost;
   document.getElementById('bomb-cost').textContent = bombCost;
   document.getElementById('dynamite-cost').textContent = dynamiteCost;
   document.getElementById('robot-cost').textContent = robotCost;
   document.getElementById('rocket-cost').textContent = rocketCost;
-  document.getElementById('rebirth-cost').textContent = rebirthCost;
 
   setCookie('gems', gems);
   setCookie('clickPower', clickPower);
   setCookie('helpPower', helpPower);
-  setCookie('rebirthPower', rebirthPower);
   setCookie('pickaxeUpgrade', pickaxeUpgrade);
   setCookie('minerCost', minerCost);
   setCookie('bombCost', bombCost);
   setCookie('dynamiteCost', dynamiteCost);
   setCookie('robotCost', robotCost);
   setCookie('rocketCost', rocketCost);
-  setCookie('rebirthCost', rebirthCost);
 }
 
 function mineGem() {
@@ -106,26 +100,6 @@ function buyRocket() {
     gems -= rocketCost;
     helpPower += 100000;
     rocketCost = Math.floor(rocketCost * 1.40);
-    updateDisplay();
-  }
-}
-
-function buyRebirth() {
-  if (gems >= rebirthCost) {
-    gems -= rebirthCost;
-    rebirthPower += 1;
-    rebirthCost = Math.floor(rebirthCost * 1.45);
-
-    gems = 0;
-    clickPower = 1;
-    helpPower = 0;
-    pickaxeUpgrade = 10;
-    minerCost = 100;
-    bombCost = 1000;
-    dynamiteCost = 10000;
-    robotCost = 100000;
-    rocketCost = 1000000;
-
     updateDisplay();
   }
 }
