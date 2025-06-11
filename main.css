@@ -124,8 +124,7 @@ html, body {
 #buy-bomb,
 #buy-dynamite,
 #buy-robot,
-#buy-rocket,
-#buy-rebirth {
+#buy-rocket {
   font-size: 1.5rem;
   padding: 10px 25px;
   cursor: pointer;
@@ -142,8 +141,7 @@ html, body {
 #buy-bomb:active,
 #buy-dynamite:active,
 #buy-robot:active,
-#buy-rocket:active,
-#buy-rebirth:active {
+#buy-rocket:active {
   box-shadow: 0 2px #008fa0, 0 3px 6px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
 }
@@ -176,8 +174,7 @@ html, body {
 }
 
 #click-power-display,
-#help-power-display,
-#rebirth-power-display {
+#help-power-display {
   font-size: 1.2rem;
   margin-bottom: 5px;
   font-weight: bold;
