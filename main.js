@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.2.2
+Gem Incremental v1.3.0
 Author: Mathias Tichota
 Licensed under the MIT License
 */
@@ -10,6 +10,8 @@ let pickaxeUpgrade = 10;
 let minerCost = 100;
 let bombCost = 1000;
 let dynamiteCost = 10000;
+let robotCost = 100000;
+let rocketCost = 1000000;
 
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
@@ -29,6 +31,8 @@ function updateDisplay() {
   document.getElementById('miner-cost').textContent = minerCost;
   document.getElementById('bomb-cost').textContent = bombCost;
   document.getElementById('dynamite-cost').textContent = dynamiteCost;
+  document.getElementById('robot-cost').textContent = robotCost;
+  document.getElementById('rocket-cost').textContent = rocketCost;
 
   setCookie('gems', gems);
   setCookie('clickPower', clickPower);
@@ -37,6 +41,8 @@ function updateDisplay() {
   setCookie('minerCost', minerCost);
   setCookie('bombCost', bombCost);
   setCookie('dynamiteCost', dynamiteCost);
+  setCookie('robotCost', robotCost);
+  setCookie('rocketCost', rocketCost);
 }
 
 function mineGem() {
@@ -80,6 +86,25 @@ function buyDynamite() {
   }
 }
 
+
+function buyRobot() {
+  if (gems >= robotCost) {
+    gems -= robotCost;
+    helpPower += 10000;
+    robotCost = Math.floor(robotCost * 1.35);
+    updateDisplay();
+  }
+}
+
+function buyRocket() {
+  if (gems >= rocketCost) {
+    gems -= rocketCost;
+    helpPower += 10000;
+    rocketCost = Math.floor(rocketCost * 1.40);
+    updateDisplay();
+  }
+}
+
 function loadSavedData() {
   const savedGems = getCookie('gems');
   const savedClick = getCookie('clickPower');
@@ -88,6 +113,8 @@ function loadSavedData() {
   const savedMiner = getCookie('minerCost');
   const savedBomb = getCookie('bombCost');
   const savedDynamite = getCookie('dynamiteCost');
+  const savedRobot = getCookie('robotCost');
+  const savedRocket = getCookie('rocketCost');
 
   if (savedGems) gems = parseInt(savedGems);
   if (savedClick) clickPower = parseInt(savedClick);
@@ -96,6 +123,8 @@ function loadSavedData() {
   if (savedMiner) minerCost = parseInt(savedMiner);
   if (savedBomb) bombCost = parseInt(savedBomb);
   if (savedDynamite) dynamiteCost = parseInt(savedDynamite);
+  if (savedRobot) robotCost = parseInt(savedRobot);
+  if (savedRocket) rocketCost = parseInt(savedRocket);
 }
 
 setInterval(() => {
