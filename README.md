@@ -1,6 +1,6 @@
 # 💎 Gem Incremental
 
-**Version:** v1.4.0
+**Version:** v1.4.1
 **Release Date:** June 9th 2025  
 **License:** MIT
 
@@ -9,11 +9,12 @@ Gem Incremental is a lightweight, browser-based incremental clicker game where y
 ## 🚀 Features
 
 - Manual gem mining with increasing click power.
-- Automatic gem generation via hired miners.
+- Automatic gem generation via upgrades.
 - Cost-scaling upgrades to balance strategy.
 - Persistent save via cookies.
 - Clean UI and future expansion slots.
 - Open-source and moddable.
+- Offline progress
 
 ## 🔧 How to Play
 
