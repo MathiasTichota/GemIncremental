@@ -6,7 +6,7 @@ Licensed under the MIT License
 let gems = 0;
 let clickPower = 1;
 let helpPower = 0;
-let rebirthPower = 1;
+let rebirthPower = 0;
 let pickaxeUpgrade = 10;
 let minerCost = 100;
 let bombCost = 1000;
@@ -125,7 +125,6 @@ function buyRebirth() {
     let dynamiteCost = 10000;
     let robotCost = 100000;
     let rocketCost = 1000000;
-    let rebirthCost = 10000000;
 
     updateDisplay();
   }
