@@ -158,7 +158,7 @@ function showOfflinePopup(earned) {
 
 setInterval(() => {
   if (helpPower > 0) {
-    gems += helpPower * (rebirthPower + 1);
+    gems += helpPower;
     updateDisplay();
   }
 }, 1000);
