@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.4.0
+Gem Incremental v1.4.1
 Author: Mathias Tichota
 Licensed under the MIT License
 */
@@ -143,7 +143,7 @@ function showOfflinePopup(earned) {
   overlay.id = "offline-overlay";
   overlay.innerHTML = `
     <div class="offline-popup">
-      <div class="offline-text">While you were away, your helpers mined <strong>${earned}</strong> gems!</div>
+      <div class="offline-text">While you were away, you mined <strong>${earned}</strong> gems!</div>
       <button id="offline-ok">Ok</button>
     </div>
   `;
