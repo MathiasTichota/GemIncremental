@@ -1,5 +1,5 @@
 <!-- 
-Gem Incremental v1.2.2
+Gem Incremental v1.3.0
 Author: Mathias Tichota
 Licensed under the MIT License
 -->
@@ -7,13 +7,13 @@ Licensed under the MIT License
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gem Incremental v1.2.2</title>
+  <title>Gem Incremental v1.3.0</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
   <br>
-  <h1 id="game-title">Gem Incremental v1.2.2</h1>
+  <h1 id="game-title">Gem Incremental v1.3.0</h1>
 
   <div class="container">
     <div class="section" id="mine-section">
@@ -77,9 +77,33 @@ Licensed under the MIT License
           </div>
           <button id="buy-dynamite" class="mine-button" onclick="buyDynamite()">Buy</button>
         </div>
+
+        <div class="upgrade-box">
+          <div class="tooltip-container">
+            <div class="upgrade-icon">🤖</div>
+            <span class="tooltip-text">Why not hire a robot that will work tirelessly for you?</span>
+          </div>
+          <div class="upgrade-info">
+            <strong>Robot</strong><br>
+            Cost: <span id="robot-cost">100000</span> 💎<br>
+            <small class="upgrade-power">+10000 Help Power</small>
+          </div>
+          <button id="buy-robot" class="mine-button" onclick="buyRobot()">Buy</button>
+        </div>
+
+       <div class="upgrade-box">
+          <div class="tooltip-container">
+            <div class="upgrade-icon">🚀</div>
+            <span class="tooltip-text">Why not mine gems on other planets?</span>
+          </div>
+          <div class="upgrade-info">
+            <strong>Rocket</strong><br>
+            Cost: <span id="rocket-cost">1000000</span> 💎<br>
+            <small class="upgrade-power">+100000 Help Power</small>
+          </div>
+          <button id="buy-rocket" class="mine-button" onclick="buyRocket()">Buy</button>
+        </div>
         
-        <div class="coming-soon-box">Coming soon</div>
-        <div class="coming-soon-box">Coming soon</div>
         <div class="coming-soon-box">Coming soon</div>
         <div class="coming-soon-box">Coming soon</div>
         <div class="coming-soon-box">Coming soon</div>
@@ -90,6 +114,15 @@ Licensed under the MIT License
     <div class="section" id="right-section">
       <h2 style="text-align: center;">Changelog</h2>
 
+      <div class="changelog-entry">
+        <h3 style="text-align: left;">v1.3.0</h3>
+        <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
+        <ul style="list-style-type: disc; margin-left: 20px;">
+          <li>Added the Robot upgrade.</li>
+          <li>Added the Rocket upgrade.</li>
+        </ul>
+      </div>
+      
       <div class="changelog-entry">
         <h3 style="text-align: left;">v1.2.2</h3>
         <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
