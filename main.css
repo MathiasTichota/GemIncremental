@@ -33,6 +33,8 @@ html, body {
   height: calc(100% - 100px);
   padding: 10px;
   gap: 10px;
+  /* Added to ensure children can scroll */
+  min-height: 0;
 }
 
 .section {
@@ -48,13 +50,17 @@ html, body {
     0 4px 6px rgba(0, 143, 160, 0.4),
     0 6px 10px rgba(160, 240, 251, 0.3);
   border-radius: 10px;
-  /* overflow: hidden; */
+  /* overflow: hidden; */ /* keep commented out */
+  min-height: 0; /* Important to allow flex children to scroll */
 }
 
 #middle-section {
   overflow-y: auto;
   align-items: flex-start;
   padding: 10px;
+  /* Fix scroll height */
+  height: 100%;
+  min-height: 0;
 }
 
 .coming-soon-container {
@@ -214,6 +220,7 @@ html, body {
 #right-section {
   overflow-y: auto;
   max-height: 100%;
+  min-height: 0;
 }
 
 #right-section::-webkit-scrollbar {
