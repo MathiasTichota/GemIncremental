@@ -1,5 +1,5 @@
 <!-- 
-Gem Incremental v1.3.1
+Gem Incremental v1.4.0
 Author: Mathias Tichota
 Licensed under the MIT License
 -->
@@ -12,195 +12,207 @@ Licensed under the MIT License
 </head>
 <body>
 
-  <br>
-  <h1 id="game-title">Gem Incremental v1.3.1</h1>
+  <div id="game-root">
 
-  <div class="container">
-    <div class="section" id="mine-section">
-      <div class="gem-display"><span id="gem-count">0</span> 💎</div>
-      <div class="gem-icon">💎</div>
-      <div id="click-power-display">Click Power: 1</div>
-      <div id="help-power-display">Help Power: 0</div>
-      <button class="mine-button" onclick="mineGem()">Mine Gems</button>
-    </div>
+    <br>
+    <h1 id="game-title">Gem Incremental v1.3.1</h1>
 
-    <div class="section" id="middle-section">
-      <div class="coming-soon-container">
-        <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">⛏️</div>
-            <span class="tooltip-text">Why not purchase a better pickaxe for yourself?</span>
+    <div class="container">
+      <div class="section" id="mine-section">
+        <div class="gem-display"><span id="gem-count">0</span> 💎</div>
+        <div class="gem-icon">💎</div>
+        <div id="click-power-display">Click Power: 1</div>
+        <div id="help-power-display">Help Power: 0</div>
+        <button class="mine-button" onclick="mineGem()">Mine Gems</button>
+      </div>
+
+      <div class="section" id="middle-section">
+        <div class="coming-soon-container">
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">⛏️</div>
+              <span class="tooltip-text">Why not purchase a better pickaxe for yourself?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Better Pickaxe</strong><br>
+              Cost: <span id="upgrade-cost">10</span> 💎<br>
+              <small class="upgrade-power">+1 Clicking Power</small>
+            </div>
+            <button id="buy-upgrade" class="mine-button" onclick="buyUpgrade()">Buy</button>
           </div>
-          <div class="upgrade-info">
-            <strong>Better Pickaxe</strong><br>
-            Cost: <span id="upgrade-cost">10</span> 💎<br>
-            <small class="upgrade-power">+1 Clicking Power</small>
+
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">👷</div>
+              <span class="tooltip-text">Why not hire a helper that will mine for you?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Miner</strong><br>
+              Cost: <span id="miner-cost">100</span> 💎<br>
+              <small class="upgrade-power">+10 Help Power</small>
+            </div>
+            <button id="buy-miner" class="mine-button" onclick="buyMiner()">Buy</button>
           </div>
-          <button id="buy-upgrade" class="mine-button" onclick="buyUpgrade()">Buy</button>
+
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">💣</div>
+              <span class="tooltip-text">Why not use the power of little bombs?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Bomb</strong><br>
+              Cost: <span id="bomb-cost">1000</span> 💎<br>
+              <small class="upgrade-power">+100 Help Power</small>
+            </div>
+            <button id="buy-bomb" class="mine-button" onclick="buyBomb()">Buy</button>
+          </div>
+
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">🧨</div>
+              <span class="tooltip-text">Why not use the power of powerful dynamites?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Dynamite</strong><br>
+              Cost: <span id="dynamite-cost">10000</span> 💎<br>
+              <small class="upgrade-power">+1000 Help Power</small>
+            </div>
+            <button id="buy-dynamite" class="mine-button" onclick="buyDynamite()">Buy</button>
+          </div>
+
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">🤖</div>
+              <span class="tooltip-text">Why not hire a robot that will work tirelessly for you?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Robot</strong><br>
+              Cost: <span id="robot-cost">100000</span> 💎<br>
+              <small class="upgrade-power">+10000 Help Power</small>
+            </div>
+            <button id="buy-robot" class="mine-button" onclick="buyRobot()">Buy</button>
+          </div>
+
+          <div class="upgrade-box">
+            <div class="tooltip-container">
+              <div class="upgrade-icon">🚀</div>
+              <span class="tooltip-text">Why not mine gems on other planets?</span>
+            </div>
+            <div class="upgrade-info">
+              <strong>Rocket</strong><br>
+              Cost: <span id="rocket-cost">1000000</span> 💎<br>
+              <small class="upgrade-power">+100000 Help Power</small>
+            </div>
+            <button id="buy-rocket" class="mine-button" onclick="buyRocket()">Buy</button>
+          </div>
+
+          <div class="coming-soon-box">Coming soon</div>
+          <div class="coming-soon-box">Coming soon</div>
+          <div class="coming-soon-box">Coming soon</div>
+          <div class="coming-soon-box">Coming soon</div>
         </div>
+      </div>
 
-        <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">👷</div>
-            <span class="tooltip-text">Why not hire a helper that will mine for you?</span>
-          </div>
-          <div class="upgrade-info">
-            <strong>Miner</strong><br>
-            Cost: <span id="miner-cost">100</span> 💎<br>
-            <small class="upgrade-power">+10 Help Power</small>
-          </div>
-          <button id="buy-miner" class="mine-button" onclick="buyMiner()">Buy</button>
-        </div>
+      <div class="section" id="right-section">
+        <h2 style="text-align: center;">Changelog</h2>
 
-         <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">💣</div>
-            <span class="tooltip-text">Why not use the power of little bombs?</span>
-          </div>
-          <div class="upgrade-info">
-            <strong>Bomb</strong><br>
-            Cost: <span id="bomb-cost">1000</span> 💎<br>
-            <small class="upgrade-power">+100 Help Power</small>
-          </div>
-          <button id="buy-bomb" class="mine-button" onclick="buyBomb()">Buy</button>
-        </div>
-
-        <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">🧨</div>
-            <span class="tooltip-text">Why not use the power of powerful dynamites?</span>
-          </div>
-          <div class="upgrade-info">
-            <strong>Dynamite</strong><br>
-            Cost: <span id="dynamite-cost">10000</span> 💎<br>
-            <small class="upgrade-power">+1000 Help Power</small>
-          </div>
-          <button id="buy-dynamite" class="mine-button" onclick="buyDynamite()">Buy</button>
-        </div>
-
-        <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">🤖</div>
-            <span class="tooltip-text">Why not hire a robot that will work tirelessly for you?</span>
-          </div>
-          <div class="upgrade-info">
-            <strong>Robot</strong><br>
-            Cost: <span id="robot-cost">100000</span> 💎<br>
-            <small class="upgrade-power">+10000 Help Power</small>
-          </div>
-          <button id="buy-robot" class="mine-button" onclick="buyRobot()">Buy</button>
-        </div>
-
-       <div class="upgrade-box">
-          <div class="tooltip-container">
-            <div class="upgrade-icon">🚀</div>
-            <span class="tooltip-text">Why not mine gems on other planets?</span>
-          </div>
-          <div class="upgrade-info">
-            <strong>Rocket</strong><br>
-            Cost: <span id="rocket-cost">1000000</span> 💎<br>
-            <small class="upgrade-power">+100000 Help Power</small>
-          </div>
-          <button id="buy-rocket" class="mine-button" onclick="buyRocket()">Buy</button>
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.4.0</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Added offline progress.</li>
+          </ul>
         </div>
         
-        <div class="coming-soon-box">Coming soon</div>
-        <div class="coming-soon-box">Coming soon</div>
-        <div class="coming-soon-box">Coming soon</div>
-        <div class="coming-soon-box">Coming soon</div>
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.3.1</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Fixed a bug that caused the Rocket upgrade to provide the same help power as the previous upgrade.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.3.0</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Added the Robot upgrade.</li>
+            <li>Added the Rocket upgrade.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.2.2</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Added spacing above the game title for better visual balance.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.2.1</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Fixed a bug that caused the Dynamite upgrade to calculate its price based on the Bomb upgrade.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.2.0</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Added the Dynamite upgrade.</li>
+            <li>Updated Bomb upgrade text to display the correct initial price.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.1.2</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Reduced the increase rate of upgrade costs to make progression smoother.</li>
+            <li>Adjusted the price of the Bomb upgrade for better balance.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.1.1</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Fixed an issue that prevented purchasing the Bomb upgrade.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.1.0</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Added the Bomb upgrade.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.0.1</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Corrected text in the previous changelog entry.</li>
+          </ul>
+        </div>
+
+        <div class="changelog-entry">
+          <h3 style="text-align: left;">v1.0.0</h3>
+          <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
+          <ul style="list-style-type: disc; margin-left: 20px;">
+            <li>Initial release of Gem Incremental.</li>
+            <li>Added Better Pickaxe upgrade that gives you more click power.</li>
+            <li>Added Miner upgrade that generates gems automatically.</li>
+            <li>Game state now saves via cookies.</li>
+            <li>Basic layout with three sections and smooth UI.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="section" id="right-section">
-      <h2 style="text-align: center;">Changelog</h2>
-
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.3.1</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Fixed a bug that caused the Rocket upgrade to provide the same help power as the previous upgrade.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.3.0</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Added the Robot upgrade.</li>
-          <li>Added the Rocket upgrade.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.2.2</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Added spacing above the game title for better visual balance.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.2.1</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Fixed a bug that caused the Dynamite upgrade to calculate its price based on the Bomb upgrade.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.2.0</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 10th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Added the Dynamite upgrade.</li>
-          <li>Updated Bomb upgrade text to display the correct initial price.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.1.2</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Reduced the increase rate of upgrade costs to make progression smoother.</li>
-          <li>Adjusted the price of the Bomb upgrade for better balance.</li>
-        </ul>
-      </div>
-      
-       <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.1.1</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Fixed an issue that prevented purchasing the Bomb upgrade.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.1.0</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Added the Bomb upgrade.</li>
-        </ul>
-      </div>
-      
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.0.1</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Corrected text in the previous changelog entry.</li>
-        </ul>
-      </div>
-
-      <div class="changelog-entry">
-        <h3 style="text-align: left;">v1.0.0</h3>
-        <p style="text-align: left;"><strong>Release Date:</strong> June 9th 2025</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-          <li>Initial release of Gem Incremental.</li>
-          <li>Added Better Pickaxe upgrade that gives you more click power.</li>
-          <li>Added Miner upgrade that generates gems automatically.</li>
-          <li>Game state now saves via cookies.</li>
-          <li>Basic layout with three sections and smooth UI.</li>
-        </ul>
-      </div>
-    </div>
   </div>
 
   <script src="main.js"></script>
