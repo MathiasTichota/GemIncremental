@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.4.1
+Gem Incremental v1.5.0
 Author: Mathias Tichota
 Licensed under the MIT License 
 */
@@ -176,7 +176,8 @@ html, body {
 }
 
 #click-power-display,
-#help-power-display {
+#help-power-display,
+#rebirth-power-display {
   font-size: 1.2rem;
   margin-bottom: 5px;
   font-weight: bold;
