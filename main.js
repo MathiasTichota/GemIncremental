@@ -1,5 +1,5 @@
 /*
-Gem Incremental v1.3.1
+Gem Incremental v1.4.0
 Author: Mathias Tichota
 Licensed under the MIT License
 */
@@ -72,7 +72,7 @@ function buyBomb() {
   if (gems >= bombCost) {
     gems -= bombCost;
     helpPower += 100;
-    bombCost = Math.floor(bombCost * 1.25); //
+    bombCost = Math.floor(bombCost * 1.25);
     updateDisplay();
   }
 }
@@ -85,7 +85,6 @@ function buyDynamite() {
     updateDisplay();
   }
 }
-
 
 function buyRobot() {
   if (gems >= robotCost) {
@@ -127,6 +126,36 @@ function loadSavedData() {
   if (savedRocket) rocketCost = parseInt(savedRocket);
 }
 
+function applyOfflineProgress() {
+  const lastTime = getCookie('lastSavedTime');
+  if (lastTime) {
+    const secondsPassed = Math.floor((Date.now() - parseInt(lastTime)) / 1000);
+    if (helpPower > 0 && secondsPassed > 0) {
+      const offlineGems = helpPower * secondsPassed;
+      gems += offlineGems;
+      showOfflinePopup(offlineGems);
+    }
+  }
+}
+
+function showOfflinePopup(earned) {
+  const overlay = document.createElement("div");
+  overlay.id = "offline-overlay";
+  overlay.innerHTML = `
+    <div class="offline-popup">
+      <div class="offline-text">While you were away, your helpers mined <strong>${earned}</strong> gems!</div>
+      <button id="offline-ok">Ok</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  document.getElementById("offline-ok").onclick = () => {
+    overlay.remove();
+    document.getElementById("game-root").classList.remove("blurred");
+    updateDisplay();
+  };
+  document.getElementById("game-root").classList.add("blurred");
+}
+
 setInterval(() => {
   if (helpPower > 0) {
     gems += helpPower;
@@ -134,7 +163,12 @@ setInterval(() => {
   }
 }, 1000);
 
+window.addEventListener("beforeunload", () => {
+  setCookie("lastSavedTime", Date.now());
+});
+
 window.onload = () => {
   loadSavedData();
+  applyOfflineProgress();
   updateDisplay();
 };
