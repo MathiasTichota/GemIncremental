@@ -1,5 +1,5 @@
 <!-- 
-Gem Incremental v1.5.0
+Gem Incremental v1.4.1
 Author: Mathias Tichota
 Licensed under the MIT License
 -->
@@ -7,7 +7,7 @@ Licensed under the MIT License
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gem Incremental v1.5.0</title>
+  <title>Gem Incremental v1.4.1</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -15,7 +15,7 @@ Licensed under the MIT License
   <div id="game-root">
 
     <br>
-    <h1 id="game-title">Gem Incremental v1.5.0</h1>
+    <h1 id="game-title">Gem Incremental v1.4.1</h1>
 
     <div class="container">
       <div class="section" id="mine-section">
@@ -23,7 +23,6 @@ Licensed under the MIT License
         <div class="gem-icon">💎</div>
         <div id="click-power-display">Click Power: 1</div>
         <div id="help-power-display">Help Power: 0</div>
-        <div id="rebirth-power-display">Rebirth Power: 0</div>
         <button class="mine-button" onclick="mineGem()">Mine Gems</button>
       </div>
 
@@ -106,35 +105,12 @@ Licensed under the MIT License
             </div>
             <button id="buy-rocket" class="mine-button" onclick="buyRocket()">Buy</button>
           </div>
-
-          <div class="upgrade-box">
-            <div class="tooltip-container">
-              <div class="upgrade-icon">💥</div>
-              <span class="tooltip-text">Why not rebirth to mine even more gems? Each rebirth will multiply your help power.</span>
-            </div>
-            <div class="upgrade-info">
-              <strong>Rocket</strong><br>
-              Cost: <span id="rebirth-cost">10000000</span> 💎<br>
-              <small class="upgrade-power">+1 Rebirth</small>
-            </div>
-            <button id="buy-rebirth" class="mine-button" onclick="buyRebirth()">Buy</button>
-          </div>
-
-          <div class="coming-soon-box">Coming soon</div>
         </div>
       </div>
 
       <div class="section" id="right-section">
         <h2 style="text-align: center;">Changelog</h2>
 
-        <div class="changelog-entry">
-          <h3 style="text-align: left;">v1.5.0</h3>
-          <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
-          <ul style="list-style-type: disc; margin-left: 20px;">
-            <li>Added rebirth.</li>
-          </ul>
-        </div>
-        
         <div class="changelog-entry">
           <h3 style="text-align: left;">v1.4.1</h3>
           <p style="text-align: left;"><strong>Release Date:</strong> June 11th 2025</p>
