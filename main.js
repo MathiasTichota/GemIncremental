@@ -99,7 +99,7 @@ function buyRobot() {
 function buyRocket() {
   if (gems >= rocketCost) {
     gems -= rocketCost;
-    helpPower += 10000;
+    helpPower += 100000;
     rocketCost = Math.floor(rocketCost * 1.40);
     updateDisplay();
   }
