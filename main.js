@@ -116,15 +116,15 @@ function buyRebirth() {
     rebirthPower += 1;
     rebirthCost = Math.floor(rebirthCost * 1.45);
 
-    let gems = 0;
-    let clickPower = 1;
-    let helpPower = 0;
-    let pickaxeUpgrade = 10;
-    let minerCost = 100;
-    let bombCost = 1000;
-    let dynamiteCost = 10000;
-    let robotCost = 100000;
-    let rocketCost = 1000000;
+    gems = 0;
+    clickPower = 1;
+    helpPower = 0;
+    pickaxeUpgrade = 10;
+    minerCost = 100;
+    bombCost = 1000;
+    dynamiteCost = 10000;
+    robotCost = 100000;
+    rocketCost = 1000000;
 
     updateDisplay();
   }
