@@ -3,7 +3,6 @@ Gem Incremental v1.4.1
 Author: Mathias Tichota
 Licensed under the MIT License 
 */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +13,12 @@ html, body {
   height: 100%;
   font-family: sans-serif;
   background-color: #a0f0fb;
+}
+
+#game-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #game-root.blurred {
@@ -29,11 +34,11 @@ html, body {
 }
 
 .container {
+  flex: 1;
   display: flex;
-  height: calc(100% - 100px);
   padding: 10px;
   gap: 10px;
-  min-height: 0;
+  overflow: hidden;
 }
 
 .section {
@@ -51,14 +56,13 @@ html, body {
   border-radius: 10px;
   overflow: hidden;
   min-height: 0;
+  margin-bottom: 10px;
 }
 
-#middle-section {
+#mine-section,
+#middle-section,
+#right-section {
   overflow-y: auto;
-  align-items: flex-start;
-  padding: 10px;
-  /* Fix scroll height */
-  height: 100%;
   min-height: 0;
 }
 
@@ -214,12 +218,6 @@ html, body {
   background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#right-section {
-  overflow-y: auto;
-  max-height: 100%;
-  min-height: 0;
 }
 
 #right-section::-webkit-scrollbar {
