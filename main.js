@@ -13,6 +13,10 @@ let dynamiteCost = 10000;
 let robotCost = 100000;
 let rocketCost = 1000000;
 
+function formatNumber(num) {
+  return num >= 1000 ? num.toExponential(2) : num.toString();
+}
+
 function setCookie(name, value, days = 365) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
   document.cookie = `${name}=${value}; expires=${expires}; path=/`;
@@ -24,15 +28,15 @@ function getCookie(name) {
 }
 
 function updateDisplay() {
-  document.getElementById('gem-count').textContent = gems;
-  document.getElementById('click-power-display').textContent = `Click Power: ${clickPower}`;
-  document.getElementById('help-power-display').textContent = `Help Power: ${helpPower}`;
-  document.getElementById('upgrade-cost').textContent = pickaxeUpgrade;
-  document.getElementById('miner-cost').textContent = minerCost;
-  document.getElementById('bomb-cost').textContent = bombCost;
-  document.getElementById('dynamite-cost').textContent = dynamiteCost;
-  document.getElementById('robot-cost').textContent = robotCost;
-  document.getElementById('rocket-cost').textContent = rocketCost;
+  document.getElementById('gem-count').textContent = formatNumber(gems);
+  document.getElementById('click-power-display').textContent = `Click Power: ${formatNumber(clickPower)}`;
+  document.getElementById('help-power-display').textContent = `Help Power: ${formatNumber(helpPower)}`;
+  document.getElementById('upgrade-cost').textContent = formatNumber(pickaxeUpgrade);
+  document.getElementById('miner-cost').textContent = formatNumber(minerCost);
+  document.getElementById('bomb-cost').textContent = formatNumber(bombCost);
+  document.getElementById('dynamite-cost').textContent = formatNumber(dynamiteCost);
+  document.getElementById('robot-cost').textContent = formatNumber(robotCost);
+  document.getElementById('rocket-cost').textContent = formatNumber(rocketCost);
 
   setCookie('gems', gems);
   setCookie('clickPower', clickPower);
@@ -143,7 +147,7 @@ function showOfflinePopup(earned) {
   overlay.id = "offline-overlay";
   overlay.innerHTML = `
     <div class="offline-popup">
-      <div class="offline-text">While you were away, you mined <strong>${earned}</strong> gems!</div>
+      <div class="offline-text">While you were away, you mined <strong>${formatNumber(earned)}</strong> gems!</div>
       <button id="offline-ok">Ok</button>
     </div>
   `;
